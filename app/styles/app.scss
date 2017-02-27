@@ -1,0 +1,8 @@
+/*effective strategy for larger applications is to leave the app.scss file
+(the one that webpack directly compiles and that app.jsx loads in for the entire application to use)
+to be a series of import statemnts, each one loading in a stylesheet that is particular to a speciifc component.
+there is a special syntax and file name convention for doing this. the files we load are called partials and
+each one has a name preceded by _. the import statement leaves off the underscore */
+//the ORDER of the import statements matters a great deal!!!!!! if the navigation component uses the variable then it must load it first!!
+@import "/base/variables";
+@import "/components/navigation";

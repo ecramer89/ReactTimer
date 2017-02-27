@@ -1,0 +1,21 @@
+/*in scss you can selectively override style attributes of classes you import from elsewhere, for example here we are
+overriding the background-color attribute of the top-bar class from foundation*/
+
+.top-bar, .top-bar ul{
+  background-color: $navigation-bar-background-color;
+}
+
+/*nesting elements within others is equivalent to declaring it as a descendant anywhere, ie, .top-bar .menu-text, just
+when we have multiple classes that would be declared as descendants of another and to apply styles to them,
+it is a bit easier. the generated css looks that way though: top-bar .menu>li>1 and top-bar .menu would be two separate selectors */
+.top-bar{
+  .menu-text{
+    color: #fff;
+  }
+  /*general tip for css debugging: look at the smallest element first */
+  .menu > li > a{
+    display: inline;
+    color: goldenrod;
+    padding: 0;
+  }
+}
